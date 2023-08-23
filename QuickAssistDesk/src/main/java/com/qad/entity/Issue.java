@@ -1,5 +1,10 @@
-package com.qad.entity;
+package com.qad.Entity;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -8,47 +13,49 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 public class Issue {
+
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String issueId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	
+	private Integer issueId;
 	
-	@NotNull(message = "issueType should not be empty!")
-    private String issueType;   //make it enum if required
+	@NotNull(message = "IssueTpe Name field should not be empty")
+	@Column(name =  "issueType")
+	private String issueType;
 	
-	@NotNull(message = "issueDescription should not be empty!")
-    private String issueDescription;
+	@NotBlank(message = "{blank.invalid}")
+	@NotEmpty(message = "{empty.invalid}")
+	@Size(min = 10,message = "Description cannot be less than 10 characters")
+	private String description;
 	
-	@NotNull(message = "issueStatus should not be empty!")
-
-    private IssueStatus issueStatus;  //make it enum if required
-
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "customer_id")
-    private Customer customer;
-
-    @OneToOne(mappedBy = "issue", cascade = CascadeType.ALL)
-    private Solution solution;
-
-	public Issue(@NotNull(message = "issueType should not be empty!") String issueType,
-			@NotNull(message = "issueDescription should not be empty!") String issueDescription,
-			@NotNull(message = "issueStatus should not be empty!") IssueStatus issueStatus, Customer customer,
-
-			Solution solution) {
-		super();
-		this.issueType = issueType;
-		this.issueDescription = issueDescription;
-		this.issueStatus = issueStatus;
-		this.customer = customer;
-		this.solution = solution;
-	}
-    
+	@NotNull(message = "Status field should not be empty")
+	@Column(name =  "status")
+	private IssueStatus status;
+	
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "callID")
+	private Call call;
+	
+	@JsonIgnore
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name= "solution_id")
+	private Solution solution;
+	
+	@JsonIgnore
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name= "customer_id")
+	private Customer customer;
+	
 }

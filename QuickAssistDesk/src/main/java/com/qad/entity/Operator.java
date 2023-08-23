@@ -1,10 +1,8 @@
-package com.qad.entity;
+package com.qad.Entity;
 
 import java.util.ArrayList;
 
 import java.util.List;
-
-import org.aspectj.weaver.ast.Call;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -12,55 +10,55 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
-public class Operator extends Login {
-	@Column(unique = true)
-	private int operatorId;
+public class Operator {
 
-	@NotNull(message = "Operator name should not be empty!")
-	private String firstName;
-	private String lastName;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	
+	private Integer operatorId;
 
-	@Column(unique = true)
-	@Email(message = "email should be formatted!")
-	@NotNull(message = "Operator name should not be empty!")
+	@NotNull(message = "Name field should not be empty")
+	@Column(name =  "name")
+	private String name;
+	
+	@NotNull(message="Email is mandatory")
+	@Pattern(regexp = "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",message = "Input a valid email address")
 	private String email;
+	
+	private String username;
+	
+	private String password;
+	
+	@NotNull(message = "Mobile number field should not be empty")
+	@Pattern(regexp = "[6789]{1}[0-9]{9}",message = "Input a valid mobile number")
+	@Column(name = "mobile")
 	private String mobile;
+	
+	@NotNull(message = "City field should not be empty")
+	@Column(name = "city")
 	private String city;
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "department_id")
-	private Department department;
-
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "login_id")
-	private Login login;
-
+	
+	@OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL, mappedBy = "operator")
+	private List<Call> call = new ArrayList<>();
+	
 	@JsonIgnore
-	@OneToMany(mappedBy = "operator", cascade = CascadeType.ALL,fetch = FetchType.LAZY) 
-	private List<Call> calls = new ArrayList<>();
-
-	public Operator(@NotNull(message = "Operator name should not be empty!") String firstName, String lastName,
-			@Email(message = "email should be formatted!") @NotNull(message = "Operator name should not be empty!") String email,
-			String mobile, String city, Department department, Login login) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.mobile = mobile;
-		this.city = city;
-		this.department = department;
-		this.login = login;
-	}
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "dept_id")
+	private Department department;
+	
 }
