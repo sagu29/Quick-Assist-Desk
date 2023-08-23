@@ -1,4 +1,4 @@
-package com.qad.Entity;
+package com.qad.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

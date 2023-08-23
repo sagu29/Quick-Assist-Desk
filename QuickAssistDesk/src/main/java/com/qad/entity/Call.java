@@ -1,10 +1,11 @@
-package com.qad.Entity;
+package com.qad.entity;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.qad.entity.Operator;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
