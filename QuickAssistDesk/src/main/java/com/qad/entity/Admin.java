@@ -1,33 +1,30 @@
-package com.qad.entity;
+package com.qad.Entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Entity
-@Getter
-@Setter
-@AllArgsConstructor
+@Entity 
+@Data
 @NoArgsConstructor
-public class Admin extends Login{
-	@Column(unique = true)
-    private int adminId;
-	@NotNull(message = "name should not be empty!")
-    private String firstName;
-    private String lastName;
-    
-    @Column(unique = true)
-    @Email(message = "email should be formatted!")
-    @NotNull(message = "email should not be empty!")
-    private String email;
-    @NotNull(message = "mobile should not be empty!")
-    private String mobile;
-    private String city;
-    
-    
+@AllArgsConstructor
+public class Admin {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer adminId;
+	
+	@NotBlank(message = "{blank.invalid}")
+	@NotEmpty(message = "{empty.invalid}")
+	private String username;
+	
+	@NotBlank(message = "{blank.invalid}")
+	@NotEmpty(message = "{empty.invalid}")
+	private String password;
 }
