@@ -1,4 +1,4 @@
-package com.qad.entity;
+package com.qad.Entity;
 
 import java.time.LocalDateTime;
 
@@ -24,4 +24,5 @@ public class CurrentOperatorSession {
 	private String token;
 	
 	private LocalDateTime localDateTime;
+
 }

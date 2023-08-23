@@ -1,8 +1,8 @@
-package com.qad.entity;
-
+package com.qad.Entity;
 
 public enum IssueStatus {
 
 	PENDING,
 	RESOLVED
+	
 }
