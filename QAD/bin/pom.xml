@@ -10,10 +10,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	
-	<groupId>com.ocsc</groupId>
+	<groupId>com.qad</groupId>
 	<artifactId>OCSC</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>OCSC</name>
+	<name>QAD</name>
 	<description>OCSC Application</description>
 	
 	<properties>
@@ -71,8 +71,14 @@
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 			<version>2.0.2</version>
+			</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+			<version>3.0.1</version>
 		</dependency>
-		
+
 		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
@@ -112,6 +118,11 @@
  			<artifactId>mysql-connector-java</artifactId>
   			<version>8.0.26</version>
 		</dependency> -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.0.2</version>
+		</dependency>
 	
 	</dependencies>
 
