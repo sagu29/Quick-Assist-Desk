@@ -1,10 +1,10 @@
-package com.ocsc;
+package com.qad;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class OcscApplicationTests {
+class QADApplicationTests {
 
 	@Test
 	void contextLoads() {
