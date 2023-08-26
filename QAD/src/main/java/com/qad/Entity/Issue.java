@@ -2,7 +2,6 @@ package com.qad.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -44,6 +43,7 @@ public class Issue {
 	@Column(name =  "status")
 	private IssueStatus status;
 	
+	@JsonIgnore
 	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "callID")
 	private Call call;
