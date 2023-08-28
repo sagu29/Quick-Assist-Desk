@@ -93,12 +93,13 @@ He is responsible for making relations between  Entity's, making logic of contro
 
 ## Team member 3:-Ramanjeet Singh 
 He is responsible for making relations between frontend and backend,manage Exceptions and there functions, making logic of controller and Services  of the website functionalities like-. 
+
 1.Connecting the frontend to the backend involves establishing communication between the user interface (UI) and the server-side application. 
 
 2.Robustness: Exception handling helps applications gracefully handle errors and unexpected situations without crashing or producing unpredictable results.
 
 3. User Experience: Well-handled exceptions provide clear error messages to users, enhancing their understanding of issues and guiding them towards resolution.
-4. 
+ 
 4.System Integrity: Exception handling prevents errors in one part of an application from causing failures in other parts, maintaining overall system stability.
 
 
