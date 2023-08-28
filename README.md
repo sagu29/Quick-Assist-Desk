@@ -102,23 +102,6 @@ This stored data is also helping in the admin network section part also.
 
 # Website ScrrenShot
 
-## Admin Dashboard Screenshoot
-![Screenshot (189)](https://github.com/sagu29/vestal-trouble-683/assets/39863817/61b8f333-8765-45c6-9960-2fddf601b906)
-
-
-![Screenshot (188)](https://github.com/sagu29/vestal-trouble-683/assets/39863817/7993b843-8736-4821-874d-5cd9c3f4c5c4)
-
-![Screenshot (190)](https://github.com/sagu29/vestal-trouble-683/assets/39863817/ce9a428d-90c3-49a7-8a11-9de2bfbb788b)
-
-## Admin-controller
-
-![admin](https://github.com/sagu29/vestal-trouble-683/assets/115462342/8e0ba3e8-a39e-441a-85ae-0eee4ae59702)
-
-## Service-controller
-![services](https://github.com/sagu29/vestal-trouble-683/assets/115462342/65b80b7e-0f3c-4fc4-ab30-ff59c9a5459b)
-
-## Operator-controller
-![Operator](https://github.com/sagu29/vestal-trouble-683/assets/115462342/080843cd-5542-4424-b29d-d0a995c8034f)
 
 
 
