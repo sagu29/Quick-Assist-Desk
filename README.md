@@ -1,69 +1,64 @@
-# vestal-trouble-683
 
+
+![quadlogo](https://github.com/sagu29/vestal-trouble-683/assets/39863817/9fb00463-4ad4-4ce1-aebb-167ea2487829)
+
+##QuickDeskAssest
+QuickDeskAssest is a customer care service is  assistance and advice provided by a company to those people who buy or use its products or services.It stores data of customers and their issues and solutions.
+we are provides best solution minimum time with our application.
 ## File Structure
 vestal-trouble-683
 
-├── QAD
-=== Repository
-
-
-│   ├── AdminRepository
-
-│   ├── OperatorRepository
-
-│   ├── DepartmentRepository
-
-│   ├── CustomerRepository
-
-
-
-
-
-├── Services
+├── index.html
 ===
 
-│   ├── AdminService
 
-│   ├── OperatorService
+│   ├── signup.html
 
-│   ├── DepartmentService
+│   ├── signin.html
 
-│   ├── CustomerService
-
+│   ├── product.html
 
 
 
 
-├── Entity
+
+
+
+├── product.html
 ===
 
-│   ├── Admin
-
-│   ├── Operator
-
-│   ├── Department
-
-│   ├── Customer
+│   ├── product_details.html
 
 
-├── Exception
+
+
+├── product_details.html
 ===
 
-│   ├── GlobalExceptionHandler
+│   ├── Cart.html 
 
-│   ├── OperatorException
-
-│   ├── DepartmentException
-
-│   ├── CustomerException
+│   │   ├── checkout.html
 
 
+├── admin.html
+===
+
+│   ├── index.html
+
+
+
+├── user.html
+===
+
+│   ├── profile.html
+
+│   ├── orders.html
 
 
 
 
 ## quick Access Desk - Excellence in every call
-Welcome to the quick Access Desk Application! This application is designed to facilitate efficient call management and customer support through an online platform. It allows call center agents to handle customer inquiries, manage call queues, and provide timely assistance. This README provides information on how to set up, configure, and use the application.
+
 This website is responsible for providing the best call service  all over the India.
 
 ## Languages used
@@ -81,52 +76,32 @@ java
 
 
 ## Team member 1: Sagar Nikhare (Team lead)
+He is responsible for making the product description, profile and orders page of the website. 
+1. Profile page- This section is responsible for checking the user details and also the details can be updated by the user.
+2. Product description page- This section is displaying the details of the product selected by the user and after selecting the size as per the user the product can be added to the cart and also can remove the products from the cart.
+3. Orders Page- This section is displaying the order history of the user and also user can track and cancel the ordered product.
 
-He is responsible for making the Entity, controller and Services  of the website functionalities like-. 
-1. Entity's- Entities responsible for bridging the gap between object-oriented programming and relational databases. They allow you to work with data in a more natural and intuitive way, abstracting the underlying database operations.
-2. Controller- The controller is responsible for handling incoming requests from users or external systems, processing the data, interacting with the model (usually involving business logic and data management), and then preparing an appropriate response to send back to the user.
 
 ## Team member 2:- Pravesh Sharma
-He is responsible for making relations between  Entity's, making logic of controller and Services  of the website functionalities like-. 
-1. Represent core business concepts and logic in an application ,Encapsulate behaviors and attributes related to real-world entities.
-2. Business Logic: Services encapsulate complex business logic, keeping entities focused on their core responsibilities.
+1. Index page - He is responsible for making the landing page of the website, where all the user get the first intraction to the website . It contains all the necessary categories, offers, discount banners, new released product and information about the website are provided for the users. It is also responsible for chaining all the sections and collecting data for the website.
+2. Sign-up and Sign-in Page -  This section is responsible for Signing-in and Signing-up with the user details.
 
 ## Team member 3:-Ramanjeet Singh 
-He is responsible for making relations between frontend and backend,manage Exceptions and there functions, making logic of controller and Services  of the website functionalities like-. 
-
-1.Connecting the frontend to the backend involves establishing communication between the user interface (UI) and the server-side application. 
-
-2.Robustness: Exception handling helps applications gracefully handle errors and unexpected situations without crashing or producing unpredictable results.
-
-3. User Experience: Well-handled exceptions provide clear error messages to users, enhancing their understanding of issues and guiding them towards resolution.
- 
-4.System Integrity: Exception handling prevents errors in one part of an application from causing failures in other parts, maintaining overall system stability.
-
+He is responsible for making the card section of the website to render all the products of the website from different-different categories. This section catching all the products from the API and having various functionalities like-
+1. Search functionality provides the products on the page with that has been searched by the user with product's title and description.
+3. Sort functionality based on prices and featured products.
+4. Filter functionality filters the products and render based upon brand, category, size and price.
+5. Pagination providing different numbers to render limited data on a single page.
 
 ## Team member 4:- Rupesh Sinha
-He is responsible for making the homepage,manage Exceptions and there functions, making logic of controller and Services  of the website. 
+He is responsible for making the cart, checkout section and billing section of the website.
+1. Cart page- This section is displaying the products which has been added to the cart by the user and also responsible to update the quantity as well as displaying the total cost of the products added to the cart. 
+2. Billing page - It's having form fuctionality which is storing the billing address and other data that are used admin section to store the details of the users who's purchasing the products.
+This stored data is also helping in the admin network section part also.
+3. Checkout page - User can checkout by entring theirs payment details.
 
-1.It's the first page users see when they visit our site. Here's a concise summary of the use and importance of a homepage.
+# Website ScrrenShot
 
-2.Response Preparation: Controllers prepare responses to send back to users or clients.
-
-3.Middleware Handling: Controllers manage middleware functions that run before or after request processing.
-
-
-# Website Images
-
-## admin-controller
-
-<img width="1680" alt="Screenshot 2023-04-03 at 7 49 11 AM" src="https://user-images.githubusercontent.com/115460552/229401615-a2f4306e-4f4d-4dbc-a030-0d77894ebe25.png">
-
-## customer-controller
-
-<img width="1680" alt="Screenshot 2023-04-03 at 7 53 22 AM" src="https://user-images.githubusercontent.com/115460552/229401939-32f3d2cb-c0d0-431d-b674-3db178c4bd08.png">
-
-
-## operator-controller
-
-<img width="1680" alt="Screenshot 2023-04-03 at 7 49 49 AM" src="https://user-images.githubusercontent.com/115460552/229401994-45191d12-ef22-42c8-8391-f0d55a959776.png">
 
 ## Deployment
 
