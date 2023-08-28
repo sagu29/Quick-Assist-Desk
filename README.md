@@ -70,7 +70,6 @@ java
 
 
 ## Team member 1: Sagar Nikhare (Team lead)
-
 He is responsible for making the product description, profile and orders page of the website. 
 1. Profile page- This section is responsible for checking the user details and also the details can be updated by the user.
 2. Product description page- This section is displaying the details of the product selected by the user and after selecting the size as per the user the product can be added to the cart and also can remove the products from the cart.
@@ -82,7 +81,7 @@ He is responsible for making the product description, profile and orders page of
 2. Sign-up and Sign-in Page -  This section is responsible for Signing-in and Signing-up with the user details.
 
 ## Team member 3:-Ramanjeet Singh 
-She is responsible for making the card section of the website to render all the products of the website from different-different categories. This section catching all the products from the API and having various functionalities like-
+He is responsible for making the card section of the website to render all the products of the website from different-different categories. This section catching all the products from the API and having various functionalities like-
 1. Search functionality provides the products on the page with that has been searched by the user with product's title and description.
 3. Sort functionality based on prices and featured products.
 4. Filter functionality filters the products and render based upon brand, category, size and price.
