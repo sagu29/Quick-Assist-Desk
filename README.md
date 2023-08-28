@@ -103,9 +103,7 @@ This stored data is also helping in the admin network section part also.
 # Website ScrrenShot
 
 
-## Deployment
 
-Netlify :
 
 
 

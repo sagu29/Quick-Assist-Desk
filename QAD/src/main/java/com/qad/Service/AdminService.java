@@ -3,6 +3,7 @@ package com.qad.Service;
 import java.util.List;
 
 import com.qad.Entity.CurrentAdminSession;
+import com.qad.Entity.Customer;
 import com.qad.Entity.Department;
 import com.qad.Entity.Login;
 import com.qad.Entity.Operator;
@@ -31,4 +32,7 @@ public interface AdminService {
 	
 	public List<Operator> findAllOperators() throws AdminException;
 	
+	public List<Customer> findAllCustomers() throws AdminException;
+	public List<Department> findAllDepartement() throws AdminException;
+	public String deleteCustomer(int id) throws AdminException;
 }
