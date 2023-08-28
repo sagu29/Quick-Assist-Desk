@@ -103,6 +103,10 @@ public class OperatorController {
 		
 		return new ResponseEntity<Customer>(c,HttpStatus.OK);
 	}
-	
+	@GetMapping("/AllIssue")
+	public ResponseEntity<List<Issue>> findAllIssue() throws OperatorException{
+		List<Issue> list=operatorService.findAllIssue();
+		return new ResponseEntity<List<Issue>>(list,HttpStatus.OK);
+	} 
 	
 }
