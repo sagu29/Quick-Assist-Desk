@@ -2,9 +2,10 @@
 
 ![quadlogo](https://github.com/sagu29/vestal-trouble-683/assets/39863817/9fb00463-4ad4-4ce1-aebb-167ea2487829)
 
-##QuickDeskAssest
-QuickDeskAssest is a customer care service is  assistance and advice provided by a company to those people who buy or use its products or services.It stores data of customers and their issues and solutions.
-we are provides best solution minimum time with our application.
+## quick Assist Desk - Excellence in every call
+Welcome to the quick Access Desk Application! This application is designed to facilitate efficient call management and customer support through an online platform. It allows call center agents to handle customer inquiries, manage call queues, and provide timely assistance. This README provides information on how to set up, configure, and use the application.
+This website is responsible for providing the best call service  all over India.
+
 ## File Structure
 vestal-trouble-683
 ├── QAD
@@ -56,11 +57,10 @@ vestal-trouble-683
 │   ├── CustomerException
 
 
+## ER Digram
 
+![er](https://github.com/sagu29/vestal-trouble-683/assets/39863817/855dd08a-7c2a-4d19-ac43-f06bad58db05)
 
-## quick Access Desk - Excellence in every call
-Welcome to the quick Access Desk Application! This application is designed to facilitate efficient call management and customer support through an online platform. It allows call center agents to handle customer inquiries, manage call queues, and provide timely assistance. This README provides information on how to set up, configure, and use the application.
-This website is responsible for providing the best call service  all over the India.
 
 
 ## Languages used
