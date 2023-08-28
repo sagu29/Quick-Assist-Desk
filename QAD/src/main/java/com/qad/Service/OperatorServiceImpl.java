@@ -197,5 +197,15 @@ public class OperatorServiceImpl implements OperatorService{
 		return false;
 	}
 
+
+
+	@Override
+	public List<Issue> findAllIssue() throws OperatorException {
+		
+      List<Issue> list=issueRepository.findAll();
+     
+		return list;
+	}
+
 	
 }

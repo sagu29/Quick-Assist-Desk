@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.qad.Entity.CurrentAdminSession;
+import com.qad.Entity.Customer;
 import com.qad.Entity.Department;
 import com.qad.Entity.Login;
 import com.qad.Entity.Operator;
@@ -121,12 +122,27 @@ public class AdminController {
 		return new ResponseEntity<Operator>(opt,HttpStatus.OK);
 	}
 	
+	@DeleteMapping("/deleteCustomer/{customerId}")
+	private ResponseEntity<String> deleteCustomerById(@PathVariable Integer customerId) throws AdminException {
+		
+		String s = adminService.deleteCustomer(customerId);
+		
+		return new ResponseEntity<String>(s,HttpStatus.OK);
+	}
 	
 	
-	@GetMapping("allOperators")
+	@GetMapping("/allOperators")
 	public ResponseEntity<List<Operator>> getAllOperatorHandler()throws AdminException{
 		    
 		return new ResponseEntity<List<Operator>>(adminService.findAllOperators(), HttpStatus.OK);
 	}
-	
+	@GetMapping("/allCustomer")
+	public ResponseEntity<List<Customer>> findAllCustomers() throws AdminException{
+		return new ResponseEntity<List<Customer>>(adminService.findAllCustomers(), HttpStatus.OK);
+	}
+	@GetMapping("/AllDepartement")
+	public ResponseEntity<List<Department>> findAllDepartement() throws AdminException{
+		return new  ResponseEntity<List<Department>> (adminService.findAllDepartement(),HttpStatus.OK);
+		
+	}
 }

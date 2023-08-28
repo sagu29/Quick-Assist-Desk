@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.qad.Entity.Admin;
 import com.qad.Entity.CurrentAdminSession;
 import com.qad.Entity.CurrentCustomerSession;
+import com.qad.Entity.Customer;
 import com.qad.Entity.Department;
 import com.qad.Entity.Login;
 import com.qad.Entity.Operator;
@@ -17,6 +18,7 @@ import com.qad.Exception.AdminException;
 import com.qad.Exception.LoginException;
 import com.qad.Repository.AdminRepository;
 import com.qad.Repository.CurrentAdminSessionRepository;
+import com.qad.Repository.CustomerRepository;
 import com.qad.Repository.DepartmentRepository;
 import com.qad.Repository.OperatorRepository;
 
@@ -25,7 +27,8 @@ import net.bytebuddy.utility.RandomString;
 @Service
 public class AdminServiceImpl implements AdminService {
 
-	
+	@Autowired
+	private CustomerRepository customerRepository;
 	@Autowired
 	private DepartmentRepository departmentRepository;
 	
@@ -226,6 +229,39 @@ public class AdminServiceImpl implements AdminService {
 		}
 		else
 			throw new LoginException("Please Enter a valid password");
+	}
+
+
+
+	@Override
+	public List<Customer> findAllCustomers() throws AdminException {
+		List<Customer> customers=customerRepository.findAll();
+		if (customers.isEmpty()) {
+			throw new AdminException("No Customers found");
+		}
+		
+		return customers;
+	}
+
+
+
+	@Override
+	public List<Department> findAllDepartement() throws AdminException {
+		// TODO Auto-generated method stub
+		List<Department> dlist=departmentRepository.findAll();
+		return dlist;
+	}
+
+
+
+	@Override
+	public String deleteCustomer(int id) throws AdminException {
+	 Optional<Customer> customer=customerRepository.findById(id);
+	if(customer!=null) {
+	 customerRepository.deleteById(id);
+		return "deleted scuccees";
+	}
+	return "Not found";
 	}
 	
 

@@ -31,4 +31,6 @@ public interface OperatorService {
 	
 	public boolean lockCustomer(Integer customerId) throws OperatorException;
 	
+	public List<Issue> findAllIssue() throws OperatorException;
+	
 }
