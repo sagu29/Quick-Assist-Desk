@@ -94,14 +94,21 @@ He is responsible for making relations between  Entity's, making logic of contro
 ## Team member 3:-Ramanjeet Singh 
 He is responsible for making relations between frontend and backend,manage Exceptions and there functions, making logic of controller and Services  of the website functionalities like-. 
 1.Connecting the frontend to the backend involves establishing communication between the user interface (UI) and the server-side application. 
+
 2.Robustness: Exception handling helps applications gracefully handle errors and unexpected situations without crashing or producing unpredictable results.
+
 3. User Experience: Well-handled exceptions provide clear error messages to users, enhancing their understanding of issues and guiding them towards resolution.
+4. 
 4.System Integrity: Exception handling prevents errors in one part of an application from causing failures in other parts, maintaining overall system stability.
+
 
 ## Team member 4:- Rupesh Sinha
 He is responsible for making the homepage,manage Exceptions and there functions, making logic of controller and Services  of the website. 
+
 1.It's the first page users see when they visit our site. Here's a concise summary of the use and importance of a homepage.
+
 2.Response Preparation: Controllers prepare responses to send back to users or clients.
+
 3.Middleware Handling: Controllers manage middleware functions that run before or after request processing.
 
 
