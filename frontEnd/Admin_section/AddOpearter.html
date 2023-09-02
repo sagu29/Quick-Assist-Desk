@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Bus - Admin Dashboard</title>
+  <!-- Include Bootstrap CSS -->
+  <!-- Include custom CSS -->
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="./styles/AddnewBusStyle.css"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Include custom CSS -->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-wOJyo+gUKDgjFhfSkZUE1L5N9Z9n4pM0ZI7wD7pJblCaa1Q0vyenKwp/AwFp/5ucHhBO1u3lshUWBE1ZLM9zg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<!-- Include SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css">
+
+<!-- Include SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+ </head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3 sidebar" id="sidebar1">
+        <div class="logo">
+          <img src="./images/quadlogo.jpg"/>
+        </div>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="./Admin_Home.html">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./Admin_Customer_Deatils.html">Customer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./Operator.html">Operator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./AddOpearter.html">Add New Operator</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="./Departement.html">Departement</a>
+          </li>
+          <li class="nav-item">
+            <a id="logout" class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+              <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Content -->
+      <div class="col-md-9 content">
+        <h1 class="sticky-header">Add New Operator</h1>
+
+        <form id="OperatorForm" class="custom-form">
+          <div class="form-group">
+            <label for="Operatorname">Operator Name</label>
+            <input type="text" id="Operatorname" name="name" class="form-control" required>
+          </div>
+
+        
+          <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="email" id="Email" name="email" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="username">UserName</label>
+            <input type="text" id="UserName" name="username" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="pasword">Password</label>
+            <input type="text" id="password" name="password" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="Mobile">Mobile</label>
+            <input type="tel" id="mobile" name="mobile" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="City">City</label>
+            <input type="text" id="city" name="city" class="form-control" required>
+          </div>
+          <button type="submit" id="addoperator" class="btn btn-primary">Add Operator</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/AddOperater.js"></script>
+
+</body>
+</html>
