@@ -44,9 +44,11 @@ public class CustomerServiceImpl implements CustomerService {
 	 */
 	@Override
 	public Customer registerCustomer(Customer customer) throws CustomerException {
+		// Check if the provided customer is null
 		if (customer == null) {
 			throw new CustomerException("Customer can't be null");
 		}
+		// Save the customer to the repository
 		return customerRepository.save(customer);
 	}
 	
@@ -60,17 +62,25 @@ public class CustomerServiceImpl implements CustomerService {
 	 */
 	@Override
 	public CurrentCustomerSession loginCustomer(Login login) throws CustomerException, LoginException {
+		// Find the existing customer by their username
 		Customer existingCustomer = customerRepository.findByUsername(login.getUsername());
+		// If the customer doesn't exist, throw a LoginException
 		if (existingCustomer == null) {
 			throw new LoginException("Please enter a valid username");
 		}	
+		// Try to find the current customer session for the existing customer
 		Optional<CurrentCustomerSession> validCustomerSessionOpt = currentCustomerSessionRepository.findById(existingCustomer.getCustomerId());
+		// If a session already exists, throw a LoginException
 		if (validCustomerSessionOpt.isPresent()) {
 			throw new LoginException("User already logged in with this username");
 		}
+		// Check if the password matches the customer's password
 		if (existingCustomer.getPassword().equals(login.getPassword())) {
+			// Generate a session key (e.g., a random string)
 			String key = RandomString.make(6);
+			// Create a new current customer session
 			CurrentCustomerSession currentCustomerSession = new CurrentCustomerSession(existingCustomer.getCustomerId(), key, LocalDateTime.now());
+			// Save the current customer session
 			currentCustomerSessionRepository.save(currentCustomerSession);
 			return currentCustomerSession;
 		} else {
@@ -87,10 +97,13 @@ public class CustomerServiceImpl implements CustomerService {
 	 */
 	@Override
 	public Issue viewIssuesById(Integer issueId) throws CustomerException {
+		// Check if the provided issueId is null
 		if (issueId == null) {
 			throw new CustomerException("IssueId can't be null");
 		}
+		// Try to find the issue by its ID in the repository
 		Optional<Issue> issue = issueRepository.findById(issueId);
+		// If the issue doesn't exist, throw a CustomerException
 		if (issue.isEmpty()) {
 			throw new CustomerException("Issue doesn't exist with the given issueId for the given Customer");
 		}
@@ -106,10 +119,13 @@ public class CustomerServiceImpl implements CustomerService {
 	 */
 	@Override
 	public Issue reOpenIssue(Integer issueId) throws CustomerException {
+		// Try to find the issue by its ID in the repository or throw an exception if not found
 		Issue issue = issueRepository.findById(issueId)
 	            .orElseThrow(() -> new CustomerException("Issue not found with ID: " + issueId));
+		// Check if the issue status is resolved and change it to pending
 		if (issue.getStatus() == IssueStatus.RESOLVED) {
 			issue.setStatus(IssueStatus.PENDING);
+			// Save the updated issue
 			return issueRepository.save(issue);
 		} else {
 			throw new CustomerException("Cannot reopen issue. The issue is not in the RESOLVED state.");
@@ -125,13 +141,17 @@ public class CustomerServiceImpl implements CustomerService {
 	 */
 	@Override
 	public List<Issue> viewAllIssues(Integer customerId) throws CustomerException {
+			// Check if the provided customerId is null
 		if (customerId == null) {
 			throw new CustomerException("CustomerId can't be null");
 		}
+		// Try to find the customer by their ID in the repository
 		Optional<Customer> customer = customerRepository.findById(customerId);
+		// If the customer is not found, throw a CustomerException
 		if (!customer.isPresent()) {
 			throw new CustomerException("Customer is not registered with customerId");
 		}
+		// Check if the customer's issue list is empty
 		if (customer.get().getIssueList().isEmpty()) {
 			throw new CustomerException("Empty issue list");
 		}
@@ -147,6 +167,7 @@ public class CustomerServiceImpl implements CustomerService {
 	 */
 	@Override
 	public String changePassword(Login login) throws CustomerException {
+		
 		return null;
 	}
 
@@ -172,8 +193,10 @@ public class CustomerServiceImpl implements CustomerService {
 	 */
 	@Override
 	public String emailPassword(Integer customerId) throws CustomerException {
+		
 		return null;
 	}
+
 
 	
 //	@Override
