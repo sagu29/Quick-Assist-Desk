@@ -25,13 +25,14 @@ import com.qad.Service.AdminService;
 
 import jakarta.validation.Valid;
 
+
+
 @RestController
 @CrossOrigin(origins = "*")
 public class AdminController {
 	
 	@Autowired
 	private AdminService adminService;
-	
 	
 	
 	@PostMapping("/adminLogin")
